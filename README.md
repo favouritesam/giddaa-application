@@ -7,7 +7,7 @@ Giddaa is an Estate Management app that helps users securely find, manage, and a
 - Clone this repo
 
 ```shell
-git clone https://github.com/favouritesam/giddaa.git
+https://github.com/favouritesam/giddaa-application.git
 ```
 
 - Create a new branch with a name reflecting what you intend to work on
