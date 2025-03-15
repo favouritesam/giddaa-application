@@ -22,7 +22,7 @@ export default function Dashboard() {
 
     return (
         <div className="flex h-screen bg-white">
-            <Sidebar onNavigate={handleNavigate} currentPage={currentPage} />
+            <Sidebar onNavigate={handleNavigate} currentPage={currentPage} name={""} email={""} />
             <div className="flex-1 overflow-auto">
                 {currentPage === "properties" && <PropertiesPage onNavigate={handleNavigate} />}
                 {currentPage === "create-estate" && <CreateEstatePage onNavigate={handleNavigate} />}
