@@ -8,7 +8,6 @@ import {
     Icon,
     Text,
     VStack,
-    Avatar,
     Button,
     Image,
     Divider,
@@ -16,7 +15,7 @@ import {
     MenuList,
     MenuButton
 } from "@chakra-ui/react"
-import {MdDashboard, MdHouse, MdPerson, MdLock, MdExitToApp} from "react-icons/md"
+import {MdDashboard, MdHouse} from "react-icons/md"
 import {FaLock, FaUser} from "react-icons/fa";
 import {MoreVertical} from "lucide-react";
 
