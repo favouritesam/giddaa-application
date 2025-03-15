@@ -1,7 +1,11 @@
 import DashboardLayout from "@/components/containers/dashboard-layout";
 
 export default function Home() {
-  return <DashboardLayout />
+  const user = {
+    name: "James Mensah",
+    email: "jamesmensah@gmail.com"
+  };
+  return <DashboardLayout user={user} />
 }
 
 
