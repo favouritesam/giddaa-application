@@ -12,7 +12,13 @@ const theme = extendTheme({
             600: "#235A28",
         },
     },
+    config: {
+        initialColorMode: "light",
+        useSystemColorMode: false,
+    },
 });
+
+
 
 const emotionCache = createCache({ key: "chakra" });
 

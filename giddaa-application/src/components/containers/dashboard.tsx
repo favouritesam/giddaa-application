@@ -1,5 +1,4 @@
 "use client"
-
 import { useState } from "react"
 import CreateEstatePage from "@/components/containers/create-estate-page";
 import ViewEstatePage from "@/components/containers/view-estate-page";

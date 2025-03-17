@@ -71,7 +71,6 @@ export default function DashboardLayout({ user }: DashboardLayoutProps) {
 
     return (
         <Flex h="100vh" w="100vw" bg="white">
-            {/* Sidebar for large screens */}
             {isSidebarVisible && (
                 <Box w="250px" minW="250px" bg="green.700" h="full">
                     <Sidebar onNavigate={handleNavigate} currentPage={currentPage} name={user.name} email={user.email} />
