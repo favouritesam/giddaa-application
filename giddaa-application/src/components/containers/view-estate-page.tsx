@@ -18,14 +18,22 @@ import {
     MenuList,
     MenuButton
 } from "@chakra-ui/react"
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 import {MdInfoOutline} from "react-icons/md"
 import {MoreVertical} from "lucide-react";
 
+// type ViewEstatePageProps = {
+//     estateId: string | null
+//     onNavigate: (page: "properties" | "create-estate" | "view-estate") => void
+// }
+
 type ViewEstatePageProps = {
-    estateId: string | null
     onNavigate: (page: "properties" | "create-estate" | "view-estate") => void
+    estateId?: string | null;
 }
+
+
+
 const mockEstate = {
     id: "1",
     name: "The View Estate",
@@ -51,10 +59,16 @@ const mockEstate = {
     ],
 }
 
-export default function ViewEstatePage({estateId, onNavigate}: ViewEstatePageProps) {
+// export default function ViewEstatePage({estateId, onNavigate}: ViewEstatePageProps) {
+
+export default function ViewEstatePage({ estateId, onNavigate }: ViewEstatePageProps) {
     const [activeTab, setActiveTab] = useState(0)
     const [isExpanded, setIsExpanded] = useState(false);
     const maxDescriptionLength = 150;
+
+    useEffect(() => {
+        console.log("Active Tab Changed:", activeTab);
+    }, [activeTab]);
 
     return (
         <Box maxW="1200px" mx="auto">
@@ -121,10 +135,13 @@ export default function ViewEstatePage({estateId, onNavigate}: ViewEstatePagePro
                 </Flex>
             </Flex>
 
-            <Flex mb={6}>
-                <Text fontSize="sm" color='#000000'>Estates</Text>
-                <Text fontSize="sm" color="gray.600" mx={2}>&gt;</Text>
-                <Text fontSize="sm" color='#000000'>Create Estate</Text>
+            <Flex mb={6} gap={4}>
+                <Text>Viewing Estate: {estateId ? estateId : "No estate selected"}</Text>
+                <Flex>
+                    <Text fontSize="sm" color='#000000'>Estates</Text>
+                    <Text fontSize="sm" color="gray.600" mx={2}>&gt;</Text>
+                    <Text fontSize="sm" color='#000000'>Create Estate</Text>
+                </Flex>
             </Flex>
             <Box mb='4%' mt='-2%'><Divider/></Box>
         </Box>
@@ -164,7 +181,6 @@ export default function ViewEstatePage({estateId, onNavigate}: ViewEstatePagePro
                         <Tab>Analytics</Tab>
                         <Tab>Activity</Tab>
                     </TabList>
-
 
                 <TabPanels>
                     <TabPanel px={0}>

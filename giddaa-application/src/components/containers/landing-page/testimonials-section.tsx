@@ -78,8 +78,18 @@ export default function TestimonialsSection() {
                         <Text fontSize="12px" fontWeight={700} color="#335F32">
                             DIRECTOR OF SALES AT BILAAD REALTY
                         </Text>
+                        {/*<Text fontSize="16px" fontWeight={400} mt='-0%' color="gray.600">*/}
+                        {/*    "I had an outstanding experience with the short-let booking service!*/}
+                        {/*    From start to finish, the team made the entire process smooth and easy.*/}
+                        {/*    I needed help finding the perfect place for my stay,*/}
+                        {/*    and they went above and beyond to locate*/}
+                        {/*    a property that fit all my requirements.*/}
+                        {/*    Once I confirmed and made the payment,*/}
+                        {/*    they handled the reservation with great efficiency.*/}
+                        {/*</Text>*/}
+
                         <Text fontSize="16px" fontWeight={400} mt='-0%' color="gray.600">
-                            "I had an outstanding experience with the short-let booking service!
+                            &quot;I had an outstanding experience with the short-let booking service!
                             From start to finish, the team made the entire process smooth and easy.
                             I needed help finding the perfect place for my stay,
                             and they went above and beyond to locate
@@ -87,6 +97,7 @@ export default function TestimonialsSection() {
                             Once I confirmed and made the payment,
                             they handled the reservation with great efficiency.
                         </Text>
+
                     </VStack>
 
                     <Box flex="1" position="relative">
@@ -98,8 +109,11 @@ export default function TestimonialsSection() {
                             w='100%'
                             h='100%'
                         />
-                        <Image src="img/C.png" position="absolute" top="44%" left="42%" w='76.51px' h='76px'/>
-                        <Image src="img/vidI.png" position="absolute" top="47%" left="47%"/>
+                        {/*<Image src="img/C.png" position="absolute" top="44%" left="42%" w='76.51px' h='76px'/>*/}
+                        {/*<Image src="img/vidI.png" position="absolute" top="47%" left="47%"/>*/}
+                        <Image src="img/C.png" alt="Letter C Icon" position="absolute" top="44%" left="42%" w='76.51px' h='76px'/>
+                        <Image src="img/vidI.png" alt="Play Video Icon" position="absolute" top="47%" left="47%"/>
+
                     </Box>
 
                     <VStack

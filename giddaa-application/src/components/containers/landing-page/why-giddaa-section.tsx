@@ -7,7 +7,6 @@ import {
     Flex,
     Heading,
     Text,
-    useColorModeValue,
     VStack,
     Image, Button
 } from "@chakra-ui/react"
@@ -26,7 +25,8 @@ export default function WhyGiddaaSection() {
 
     return (
         <Box borderRadius="3xl">
-            <Image src="img/curveLine.png" mt='6%' w='100%'/>
+            {/*<Image src="img/curveLine.png" mt='6%' w='100%'/>*/}
+            <Image src="img/curveLine.png" alt="Curved Decorative Line" mt='6%' w='100%' />
             <Container maxW="container.xl" mt='-110%'>
                 <Box textAlign="center" mb={8}>
                     <Heading as="h2" fontSize={{base: "2xl", md: "3xl"}} color="#335F32" fontWeight="bold" mt="20px"
@@ -87,7 +87,8 @@ export default function WhyGiddaaSection() {
                             _hover={{ boxShadow: "md" }}
                         >
                             <VStack align="flex-start" py={8} px={6}>
-                                <Image src="img/gr.png"/>
+                                {/*<Image src="img/gr.png"/>*/}
+                                <Image src="img/gr.png" alt="Giddaa Feature Icon" />
                                 <Heading as="h3" fontSize="18px" fontWeight={700} mt='6px'>
                                     {feature.title}
                                 </Heading>

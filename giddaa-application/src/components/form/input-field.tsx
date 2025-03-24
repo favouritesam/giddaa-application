@@ -18,15 +18,14 @@ interface InputProps {
     type?: string,
     height?: string,
     label?: string,
-    labelInfo?: string,
     labelColor?: string,
     labelSize?: string,
     required?: boolean,
     password?: boolean,
     placeholder?: string,
     size?: string,
-    radius?: string | number | {},
-    boldLabel?: boolean,
+    // radius?: string | number | {},
+    radius?: string | number | object;
     my?: string,
     px?: number,
     mb?: number
@@ -40,15 +39,13 @@ export const InputField = ({
                                radius = "8px",
                                placeholder,
                                password,
-                               labelInfo,
                                height,
                                labelColor,
                                labelSize,
-                               boldLabel = false,
                                my,
-                               px,
-                               mb,
-                               ...props,
+                               // px,
+                               // mb,
+                               ...props
                            }: InputProps) => {
     const [field, meta] = useField(name);
     const [show, setShow] = React.useState(false);
@@ -114,7 +111,7 @@ export const InputField = ({
                             transform={isFocused || field.value ? "translateY(-12px) scale(0.9)" : "translateY(-50%) scale(1)"}
                             transition="all 0.2s ease-out"
                             pointerEvents="none"
-                            background="#fff"
+                            background="#ffff"
                             px="4px"
                             fontSize="14px"
                             color={isFocused ? "var(--primary)" : "var(--grey)"}
@@ -162,29 +159,75 @@ export const InputField = ({
     );
 };
 
+// export const TextAreaField = ({
+//                                   name,
+//                                   my,
+//                                   label,
+//                                   radius,
+//                                   placeholder,
+//                                   password,
+//                                   labelColor,
+//                                   labelSize,
+//                                   height,
+//                                   size,
+//                                   ...props
+//                               }: InputProps) => {
+//     const [field, meta] = useField(name);
+
 export const TextAreaField = ({
                                   name,
                                   my,
                                   label,
                                   radius,
                                   placeholder,
-                                  password,
                                   labelColor,
                                   labelSize,
                                   height,
-                                  size,
-                                  ...props
+                                  ...props // ✅ Keep other props if necessary
                               }: InputProps) => {
     const [field, meta] = useField(name);
 
+
     return (
+//         <FormControl my={my || "1.8em"} width="100%">
+//             <FormLabel
+//                 fontSize={labelSize || "16px"}
+//                 lineHeight="22px"
+//                 fontWeight="400"
+//                 color={labelColor || ""}
+//             >
+//                 {label}
+//             </FormLabel>
+//
+//             <Textarea
+//                 autoComplete="true"
+//                 fontSize="sm"
+//                 placeholder={placeholder}
+//                 borderRadius={radius ? radius : "9px"}
+//                 border="1px solid  #E2E8F0"
+//                 className={meta.touched && meta.error ? "shake" : ""}
+//                 _placeholder={{
+//                     fontWeight: "400",
+//                     color: "var(--grey)",
+//                     fontSize: "16px",
+//                     lineHeight: "22px",
+//                 }}
+//                 height={height || "200px"}
+//                 {...props}
+//                 {...field}
+//             />
+//
+//             {meta.touched && meta.error ? (
+//                 <Text color="var(--deep-blood)" fontSize="sm" pt=".3em">
+//                     {meta.error}
+//                 </Text>
+//             ) : null}
+//         </FormControl>
+//     );
+// };
+
         <FormControl my={my || "1.8em"} width="100%">
-            <FormLabel
-                fontSize={labelSize || "16px"}
-                lineHeight="22px"
-                fontWeight="400"
-                color={labelColor || ""}
-            >
+            <FormLabel fontSize={labelSize || "16px"} color={labelColor || ""}>
                 {label}
             </FormLabel>
 
@@ -193,7 +236,7 @@ export const TextAreaField = ({
                 fontSize="sm"
                 placeholder={placeholder}
                 borderRadius={radius ? radius : "9px"}
-                border="1px solid  #E2E8F0"
+                border="1px solid #E2E8F0"
                 className={meta.touched && meta.error ? "shake" : ""}
                 _placeholder={{
                     fontWeight: "400",
@@ -206,11 +249,11 @@ export const TextAreaField = ({
                 {...field}
             />
 
-            {meta.touched && meta.error ? (
+            {meta.touched && meta.error && (
                 <Text color="var(--deep-blood)" fontSize="sm" pt=".3em">
                     {meta.error}
                 </Text>
-            ) : null}
+            )}
         </FormControl>
     );
 };

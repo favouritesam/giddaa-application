@@ -1,5 +1,5 @@
 "use client"
-import {Heading, Text, Box, Center, Button, Flex, Image, chakra} from "@chakra-ui/react";
+import {Heading, Text, Box, Center, Button, Flex, Image} from "@chakra-ui/react";
 import React, {useEffect, useRef, useState} from "react";
 
 const categories = [
@@ -9,14 +9,12 @@ const categories = [
     "Financial Institutions",
     "Non-Governmental Organizations",
 ];
-const ChakraNextImage = chakra(Image, {
-    shouldForwardProp: (prop) => ["width", "height", "src", "alt"].includes(prop),
-})
+// const ChakraNextImage = chakra(Image, {
+//     shouldForwardProp: (prop) => ["width", "height", "src", "alt"].includes(prop),
+// })
 
 
 export default function PartnersSection() {
-
-
     const scrollContainerRef = useRef<HTMLDivElement>(null)
     const [showLeftArrow, setShowLeftArrow] = useState(false)
     const [showRightArrow, setShowRightArrow] = useState(true)
@@ -99,17 +97,60 @@ export default function PartnersSection() {
                 ))}
             </Flex>
 
-            <Flex justify="center" gap={6} mt={10} flexWrap="wrap">
-                {[...Array(9)].map((_, index) => (
-                    <Box
-                        key={index}
-                        w={{ base: "50px", md: "70px" }}
-                        h={{ base: "50px", md: "70px" }}
-                        bg="gray.300"
-                        borderRadius="full"
-                    />
-                ))}
+            <Flex align="center" justify="center" mt={10}>
+                {/* Left Scroll Button */}
+                {showLeftArrow && (
+                    <Button onClick={() => scroll("left")} borderRadius="full" bg="white" border="1px solid #335F32">
+                        ⬅️
+                    </Button>
+                )}
+
+                {/* Scrollable Partner Logos */}
+                <Flex
+                    ref={scrollContainerRef}
+                    overflowX="auto"
+                    whiteSpace="nowrap"
+                    maxW="80%"
+                    px={4}
+                    css={{
+                        "&::-webkit-scrollbar": {
+                            display: "none",
+                        },
+                        "-ms-overflow-style": "none",
+                        "scrollbar-width": "none",
+                    }}
+                >
+                    {[...Array(9)].map((_, index) => (
+                        <Box
+                            key={index}
+                            w={{ base: "50px", md: "70px" }}
+                            h={{ base: "50px", md: "70px" }}
+                            bg="gray.300"
+                            borderRadius="full"
+                            m={2}
+                        />
+                    ))}
+                </Flex>
+
+                {/* Right Scroll Button */}
+                {showRightArrow && (
+                    <Button onClick={() => scroll("right")} borderRadius="full" bg="white" border="1px solid #335F32">
+                        ➡️
+                    </Button>
+                )}
             </Flex>
+
+            {/*<Flex justify="center" gap={6} mt={10} flexWrap="wrap">*/}
+            {/*    {[...Array(9)].map((_, index) => (*/}
+            {/*        <Box*/}
+            {/*            key={index}*/}
+            {/*            w={{ base: "50px", md: "70px" }}*/}
+            {/*            h={{ base: "50px", md: "70px" }}*/}
+            {/*            bg="gray.300"*/}
+            {/*            borderRadius="full"*/}
+            {/*        />*/}
+            {/*    ))}*/}
+            {/*</Flex>*/}
 
             <Center as="section" mt='4px'>
                 <Box maxW="7xl" mx="auto">

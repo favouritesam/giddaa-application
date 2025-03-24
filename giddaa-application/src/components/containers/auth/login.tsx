@@ -17,7 +17,50 @@ export default function SignIn() {
     const router = useRouter();
     const [apiError, setApiError] = useState<string | null>(null);
 
-    const handleLogin = async (values: { email: any; password: any; }, { setSubmitting }: any) => {
+    // const handleLogin = async (values: { email: any; password: any; }, { setSubmitting }: any) => {
+    //     setApiError(null);
+    //     try {
+    //         console.log('Sending login request with values:', values);
+    //
+    //         const response = await fetch('https://dev-api.giddaa.com/account/login', {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify({
+    //                 email: values.email,
+    //                 password: values.password,
+    //                 type: 'DEVELOPER',
+    //             }),
+    //         });
+    //
+    //         const data = await response.json();
+    //         console.log('API Response:', data);
+    //
+    //         if (response.ok) {
+    //             sessionStorage.setItem('authToken', data.value.value.token);
+    //             sessionStorage.setItem('user', JSON.stringify(data.value.value.user));
+    //
+    //             router.push('/dashboardlayout');
+    //         } else {
+    //             if (data.value && data.value.message === 'Incorrect Email/Password') {
+    //                 setApiError('The email or password you entered is incorrect.');
+    //             } else {
+    //                 setApiError(data.value?.message || 'Login failed. Please check your credentials.');
+    //             }
+    //         }
+    //     } catch (error) {
+    //         console.error('Error during login:', error);
+    //         setApiError('An unexpected error occurred. Please try again later.');
+    //     } finally {
+    //         setSubmitting(false);
+    //     }
+    // };
+
+    const handleLogin = async (
+        values: { email: string; password: string }, // ✅ Explicitly type values
+        { setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void } // ✅ Explicit type
+    ) => {
         setApiError(null);
         try {
             console.log('Sending login request with values:', values);
@@ -56,6 +99,7 @@ export default function SignIn() {
             setSubmitting(false);
         }
     };
+
 
     return (
         <Center minH="100vh" px={4}>

@@ -63,7 +63,7 @@ const GetStartedCard: React.FC<CardProps> = ({ title, description, icon }) => {
                     onClick={handleGetStarted}
                 >
                     Get Started Now
-                    <Image src="/img/pointUp.png" alt="pointUp" width="25px" height="25px" ml='6px'/>
+                    <Image src="/img/pointUp.png" alt="Pointing Up Icon" width="25px" height="25px" ml='6px'/>
                 </Button>
             </Flex>
         </Box>
@@ -106,7 +106,7 @@ export default function GetStarted() {
 
     return (
         <ChakraProvider theme={getStartedTheme}>
-            <Image src="img/curveLine.png" mt='6%' w='100%'/>
+            <Image src="img/curveLine.png" alt="Decorative curve line" mt='6%' w='100%'/>
 
             <Box maxW="7xl" mx="auto" px={4} py={8} mt='-115%'>
                 <Box textAlign="center" mb={8}>

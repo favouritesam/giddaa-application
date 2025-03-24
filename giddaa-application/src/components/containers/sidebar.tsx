@@ -27,10 +27,11 @@ type SidebarProps = {
 
 
 export default function Sidebar({onNavigate, currentPage, name, email}: SidebarProps) {
-    const getInitials = (fullName: any) => {
+    const getInitials = (fullName: string) => {
         return fullName
             .split(" ")
-            .map((n: any[]) => n[0])
+            // .map((n: any[]) => n[0])
+            .map((n: string) => n[0])
             .join("")
             .toUpperCase();
     };

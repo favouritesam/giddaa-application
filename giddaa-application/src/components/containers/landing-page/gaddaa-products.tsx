@@ -1,5 +1,5 @@
 "use client"
-import {Heading, Text, Box, Center, Button, Flex, Grid, Image} from "@chakra-ui/react";
+import {Heading, Text, Box, Center, Button, Flex, Image} from "@chakra-ui/react";
 import React from "react";
 
 const cards = [
@@ -66,7 +66,8 @@ const cards = [
 export default function GaddaaProducts() {
     return (
         <Box position="relative" w="100%" textAlign="center">
-            <Image src="img/curveLine.png" mt='6%' w='100%'/>
+            {/*<Image src="img/curveLine.png" mt='6%' w='100%'/>*/}
+            <Image src="img/curveLine.png" alt="Decorative curve line" mt="6%" w="100%" />
 
             <Center p={6} flexDirection="column" textAlign="center" mt='-114%' >
                 <Heading as="h2" size="lg" color="#335F32" fontWeight="bold" mt="20px" position="relative" display="inline-block">
@@ -142,7 +143,8 @@ export default function GaddaaProducts() {
                                             mt='10%'
                                         >
                                             {card.buttonText}
-                                            <Image src="/img/arrowDown.png" alt="arrowDown" width="25px" height="25px" ml='6px'/>
+                                            {/*<Image src="/img/arrowDown.png" alt="arrowDown" width="25px" height="25px" ml='6px'/>*/}
+                                            <Image src="/img/arrowDown.png" alt="Arrow Down Icon" width="25px" height="25px" ml="6px" />
                                         </Button>
 
                                         {card.buttonText2 && (

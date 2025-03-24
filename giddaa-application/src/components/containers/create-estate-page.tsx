@@ -74,14 +74,28 @@ export default function CreateEstatePage({onNavigate}: CreateEstatePageProps) {
         const fileInput = document.createElement("input");
         fileInput.type = "file";
         fileInput.accept = "image/*";
-        fileInput.onchange = (e: any) => {
-            const file = e.target.files[0];
-            if (file) {
+        // fileInput.onchange = (e: any) => {
+        //     const file = e.target.files[0];
+        //     if (file) {
+        //         const newImageURL = URL.createObjectURL(file);
+        //         setFormData((prevData) => {
+        //             const newImages = [...prevData.images];
+        //             newImages[index] = newImageURL; // Replace the image
+        //             return {...prevData, images: newImages};
+        //         });
+        //     }
+        // };
+
+        fileInput.onchange = (e: Event) => {
+            const target = e.target as HTMLInputElement; // ✅ Correct type assertion
+            if (target.files && target.files.length > 0) {
+                const file = target.files[0];
                 const newImageURL = URL.createObjectURL(file);
+
                 setFormData((prevData) => {
                     const newImages = [...prevData.images];
                     newImages[index] = newImageURL; // Replace the image
-                    return {...prevData, images: newImages};
+                    return { ...prevData, images: newImages };
                 });
             }
         };

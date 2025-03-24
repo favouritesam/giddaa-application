@@ -21,8 +21,12 @@ export default function AboutUsSection() {
                             transform="translateX(-50%)"
                         />
                     </Heading>
+                    {/*<Text color="gray.600" mt={6}>*/}
+                    {/*    From our team's tips to your ears – let's tell you about*/}
+                    {/*</Text>*/}
+
                     <Text color="gray.600" mt={6}>
-                        From our team's tips to your ears – let's tell you about
+                        From our team&rsquo;s tips to your ears – let&rsquo;s tell you about
                     </Text>
                     <Link color="green.700" fontWeight="medium">
                         Giddaa.
@@ -45,8 +49,10 @@ export default function AboutUsSection() {
                             height={400}
                             objectFit="cover"
                         />
-                        <Image src="img/C.png"  position="absolute" top="38%" left="43%" w='76.51px' h='76px'/>
-                        <Image src="img/vidI.png"  position="absolute" top="42%" left="45.5%" w='23.16px' h='34px'/>
+                        {/*<Image src="img/C.png"  position="absolute" top="38%" left="43%" w='76.51px' h='76px'/>*/}
+                        {/*<Image src="img/vidI.png"  position="absolute" top="42%" left="45.5%" w='23.16px' h='34px'/>*/}
+                        <Image src="img/C.png" alt="" position="absolute" top="38%" left="43%" w='76.51px' h='76px'/>
+                        <Image src="img/vidI.png" alt="" position="absolute" top="42%" left="45.5%" w='23.16px' h='34px'/>
                     </Box>
                 </Box>
             </Container>
