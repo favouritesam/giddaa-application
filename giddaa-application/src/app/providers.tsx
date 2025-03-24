@@ -2,7 +2,7 @@
 
 import type React from "react";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-import { CacheProvider } from "@emotion/react";
+import {CacheProvider} from "@emotion/react";
 import createCache from "@emotion/cache";
 
 const theme = extendTheme({
