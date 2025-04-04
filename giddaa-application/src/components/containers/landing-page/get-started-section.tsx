@@ -71,8 +71,6 @@ const GetStartedCard: React.FC<CardProps> = ({ title, description, icon }) => {
 }
 
 
-
-
 export default function GetStarted() {
     const cards = [
         {
